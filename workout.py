@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS 
 import mysql.connector
+
 
 # Initialize Flask app
 app = Flask(__name__)
+CORS(app, origins=["http://127.0.0.1:3000"])
 
 # Connect to MySQL Database
 def get_db_connection():

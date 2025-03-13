@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout API</title>
+</head>
+<body>
+    <h1>Workout Management</h1>
+    <button id="view-btn">View Workouts</button>
+    <button id="add-btn">Add Workout</button>
+    <button id="delete-btn">Delete Workout</button>
+     <!-- Section for displaying the messages -->
+     <div id="message"></div>
+
+     <!-- Section for displaying the workouts -->
+     <div id="workouts-list"></div>
+    <script src="test.js">
+        // Paste the JavaScript code here from the previous answer
+
+        // Example usage (use actual functions and hook them to buttons below):
+        document.getElementById('view-btn').addEventListener('click', viewWorkouts);
+        document.getElementById('add-btn').addEventListener('click', addWorkout);
+        document.getElementById('delete-btn').addEventListener('click', function() {
+            deleteWorkout('Leg Day Routine');  // Example to delete a workout by name
+        });
+    </script>
+</body>
+</html>
