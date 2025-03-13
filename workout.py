@@ -42,5 +42,21 @@ def create_user():
     conn.close()
     return jsonify({"message": "User created successfully"}), 201
 
+@app.route('/workout/<string:name>', methods=['DELETE'])
+def delete_user(name):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('DELETE FROM workout WHERE workoutname = %s', (name,))
+    conn.commit()
+    
+    # Check if any row was deleted
+    if cursor.rowcount == 0:
+        return jsonify({"message": "User not found"}), 404
+    
+    cursor.close()
+    conn.close()
+    return jsonify({"message": "User deleted successfully"}), 200
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
