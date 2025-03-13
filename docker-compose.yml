@@ -1,0 +1,24 @@
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw      # Root password
+      MYSQL_DATABASE: my_database           # Create and use my_database by default
+    ports:
+      - "9090:3306"   # Map host port 9090 to container port 3306 (MySQL default)
+    volumes:
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/schema.sql   # Mount the db directory with schema.sql
+      - mysql-data:/var/lib/mysql          # Persist MySQL data across restarts
+    networks:
+      - mysql_network
+    restart: always  # Optionally, restart automatically
+
+volumes:
+  mysql-data:
+    driver: local
+
+networks:
+  mysql_network:
+    driver: bridge

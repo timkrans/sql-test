@@ -1,0 +1,18 @@
+
+CREATE DATABASE IF NOT EXISTS my_database;
+
+USE my_database;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS workout (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    workoutname VARCHAR(100) NOT NULL,
+    musclegroup VARCHAR(100) NOT NULL,
+    videolink VARCHAR(100) NOT NULL,
+    equipementused VARCHAR(100) NOT NULL
+);
