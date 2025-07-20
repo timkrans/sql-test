@@ -19,7 +19,7 @@ A Flask-based REST API for managing workout routines with MySQL database backend
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/timkrans/sql-test
 cd sql-backend
 ```
 
